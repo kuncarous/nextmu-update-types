@@ -85,8 +85,8 @@ export const ZFetchVersionResponse = z.object(
         description: z.string(),
         state: z.nativeEnum(VersionState),
         filesCount: z.coerce.number().int().min(0),
-        createdAt: z.string().datetime(),
-        updatedAt: z.string().datetime(),
+        createdAt: z.coerce.date(),
+        updatedAt: z.coerce.date(),
     }
 );
 export type IFetchVersionResponse = z.infer<typeof ZFetchVersionResponse>;
